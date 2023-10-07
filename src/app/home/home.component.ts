@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
   getloggedInWishList() {
     this._WishListService.getLoggedInUserWishList().subscribe({
       next: (res) => {
-        this.myLatestWishListIds = res.data.map((wishList: any) => wishList.id);
+        // this.myLatestWishListIds = res.data.map((wishList: any) => wishList.id);
         // console.log(this.myLatestWishListIds);
       },
       error: (err) => console.log(err),
