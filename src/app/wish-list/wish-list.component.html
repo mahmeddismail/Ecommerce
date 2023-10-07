@@ -1,0 +1,47 @@
+<div class="contanier">
+    <div class="row my-4 p-5">
+        <div class="bg-main-light" *ngIf="myWishList">
+            <div class="my-3 p-3 d-flex justify-content-between align-items-center">
+                <h2 class="fw-bold">Your WishList:</h2>
+            </div>
+            <div class="p-3 d-flex justify-content-between align-items-center">
+
+
+
+                <p class="h4">Total Number Of Items :
+                    <span class="text-main">
+                        {{myWishList.count}}
+                    </span>
+                </p>
+            </div>
+
+
+            <div class="my-3 p-3 row align-items-center justify-content-between border-bottom"
+                *ngFor="let product of myWishList.data;let i=index">
+
+                <div class="col-md-2">
+                    <img [src]="product.imageCover" [alt]="product.id" class="w-100">
+
+                </div>
+
+                <div class="col-md-10 d-flex justify-content-between align-items-center">
+                    <div class="mx-3">
+                        <p class="fw-bold h4 my-2">{{product.title}}</p>
+                        <span class="fw-bold h4 my-2 text-main">{{product.price}} EGP</span>
+                        <span class="text-danger d-block my-2 cursor-pointer"
+                            (click)="removeFromMyWishList(product.id)">
+                            <i class="fa fa-trash"></i>
+                            Remove
+                        </span>
+                    </div>
+                    <div class="">
+                        <button class="fw-bold border-main p-2" (click)="addToCart(product.id)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

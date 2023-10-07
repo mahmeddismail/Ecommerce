@@ -1,0 +1,8 @@
+.myNotFound {
+    background-image: url('../../assets/images/notFound.png');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}

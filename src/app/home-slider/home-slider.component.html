@@ -1,0 +1,19 @@
+<div class="container my-5">
+    <div class="row gx-0">
+        <div class="Carosuel">
+            <owl-carousel-o [options]="customOptions" class="cursor-pointer">
+                <ng-container *ngFor="let img of imageHomeSlider">
+                    <ng-template carouselSlide>
+                        <img [src]="img" class="w-100">
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+
+        <!-- <div class="d-flex flex-column myHomeStaticImg ">
+            <img src="assets/images/side1.png" alt="" class="">
+            <img src="assets/images/side2.jpeg" alt="" class="">
+        </div> -->
+    </div>
+
+</div>

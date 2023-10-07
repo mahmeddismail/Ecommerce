@@ -1,0 +1,49 @@
+<div class="bg-main my-5 p-3 w-50 mx-auto border rounded-4">
+    <div class="w-75  mx-4">
+        <input type="text" class="form-control mb-2" id="text" placeholder="Search by the name of the product"
+            [(ngModel)]="searchTerm">
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row gy-3" *ngIf="allProducts">
+        <div class="col-md-3" *ngFor="let product of allProducts|search:searchTerm">
+            <div class="product cursor-pointer overflow-hidden">
+                <!-- <h4>{{product.title|search}}</h4> -->
+                <a [routerLink]="['/productDetails',product.id]">
+                    <div>
+                        <img [src]="product.imageCover" alt="productsImg" class="w-100">
+                        <span class="text-main font-sm">{{product.category.name}}</span>
+                        <h3 class="h6 fw-bold">{{product.title|seeMore:3}}</h3>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>{{product.price}}EGP</span>
+                            <div>
+                                <i class="fa-solid fa-star rating-color"></i>
+                                <span>{{product.ratingsAverage}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="d-flex justify-content-between align-items-center gy-2">
+
+                    <button class="btn text-white w-100 bg-main d-grid" (click)="addToCart(product.id)">+ ADD</button>
+                    <div>
+                        <div (click)="addToWishList(product.id)">
+
+                            <div *ngIf="!myLatestWishListIds.includes($any(product.id))">
+                                <i class="fa-solid fa-heart fs-2"></i>
+                            </div>
+                        </div>
+
+                        <div (click)="removeFromWishList(product.id)">
+                            <div *ngIf="myLatestWishListIds.includes($any(product.id))">
+                                <i class="fa-solid fa-heart fs-2 text-danger"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row  justify-content-center align-items-center vh-100" *ngIf="myDetailedProduct">
+        <div class="col-md-4">
+            <!-- <img [src]="myDetailedProduct.imageCover" alt="" class="w-100"> -->
+            <owl-carousel-o [options]="customOptions" class="cursor-pointer">
+                <ng-container *ngFor="let img of myDetailedProduct.images">
+                    <ng-template carouselSlide>
+                        <img [src]="img" class="w-100">
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+
+        </div>
+
+        <div class="col-md-8">
+            <h2 class="fw-bold mb-2">{{myDetailedProduct.title}}</h2>
+            <p class="text-muted">{{myDetailedProduct.description}}</p>
+            <span class="text-main">{{myDetailedProduct.category.name}}</span>
+            <!-- <span class="mx-5">{{myDetailedProduct.id}}</span> -->
+            <div class="my-3 d-flex justify-content-between align-items-center">
+                <span>{{myDetailedProduct.price}}EGP</span>
+                <div>
+                    <i class="fa-solid fa-star rating-color"></i>
+                    <span>{{myDetailedProduct.ratingsAverage}}</span>
+                </div>
+            </div>
+
+
+
+            <div class="myProductInfo my-4 d-flex flex-column">
+
+                <span class="my-1">
+                    <span class="fw-bold ">Brand:</span>
+                    <span class="text-muted">
+                        {{myDetailedProduct.brand.name}}
+                    </span>
+                </span>
+                <span class="my-1">
+                    <span class="fw-bold ">Sold:</span>
+                    <span class="text-muted">
+                        {{myDetailedProduct.sold}}
+                    </span>
+                </span>
+
+                <span class="my-1">
+                    <span class="fw-bold ">Quantity left:</span>
+                    <span class="text-muted">
+                        {{myDetailedProduct.quantity}}
+                    </span>
+                </span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+
+                <div (click)="addToCart(myDetailedProduct.id)">
+                    <button class="btn text-white w-100 bg-main d-grid">Add To Your Cart</button>
+                </div>
+
+                <div (click)="addToWishList(myDetailedProduct.id)">
+                    <button class="btn text-white w-100 bg-main d-grid">
+                            <i class="fa-solid fa-heart "></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

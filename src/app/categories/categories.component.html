@@ -1,0 +1,39 @@
+<section class="container py-5">
+    <div class="row py-5 g-4" *ngIf="myCategories">
+        <div class="col-md-4" *ngFor="let category of myCategories">
+            <a [routerLink]="['/categories',category._id,'subcategories']">
+
+                <div
+                    class="border border-main product d-flex flex-column justify-content-center align-items-center cursor-pointer">
+                    <div>
+                        <img [src]="category.image" [alt]="category.name" style="height: 300px; width: 300px;">
+
+                    </div>
+                    <div>
+                        <p class="text-center text-main py-4 fw-bold h3">{{category.name}}</p>
+                        <!-- <p class="text-center text-main py-4 fw-bold h3">{{category._id}}</p> -->
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 
+
+<section *ngIf="subCategory">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div>
+                <h2 class="text-main text-center fw-bold" *ngIf="subCategories">{{specificCategory.name}}
+                    subcategories</h2>
+            </div>
+            <div class="col-md-4" *ngFor="let item of subCategory">
+                <div class="border border-main product p-3 text-center">
+                    <p class="fw-bold h3 p-3">{{item.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->

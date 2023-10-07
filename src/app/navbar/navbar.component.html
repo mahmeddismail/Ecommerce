@@ -1,0 +1,106 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+        <img src="assets/images/freshcart-logo.svg" alt="freshCartLogo" routerLink="home">
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0 text-capitalize mx-3 d-flex align-items-center"
+                *ngIf="isLoggedIn">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home" routerLinkActive="bg-main" aria-current="page">Home</a>
+                </li>
+              
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="products" routerLinkActive="bg-main">products</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="categories" routerLinkActive="bg-main">categories</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="brands" routerLinkActive="bg-main">brands</a>
+                </li>
+
+            </ul>
+
+
+
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0 text-capitalize d-flex align-items-center">
+                <div class="d-flex align-items-center gap-3 mx-3" *ngIf="isLoggedIn">
+                    <li class="nav-item">
+                        <a class="fa-brands fa-facebook cursor-pointer" target="_blank"
+                            href="https://www.facebook.com"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fa-brands fa-twitter cursor-pointer" target="_blank"
+                            href="https://twitter.com/mahmeddismail"></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="fa-brands fa-instagram cursor-pointer" target="_blank"
+                            href="https://www.instagram.com/mahmeddismail"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fa-brands fa-tiktok cursor-pointer" target="_blank" href="https://www.tiktok.com"></a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="fa-brands fa-linkedin cursor-pointer" target="_blank"
+                            href="https://www.linkedin.com/in/mahmeddismail"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fa-brands fa-youtube cursor-pointer" target="_blank"
+                            href="https://www.youtube.com/@StreamGamed"></a>
+
+                    </li>
+
+                </div>
+
+
+
+                <li class="nav-item" *ngIf="!isLoggedIn">
+                    <a class="nav-link" routerLink="login" routerLinkActive="bg-main" aria-current="page">login</a>
+                </li>
+                <li class="nav-item" *ngIf="!isLoggedIn">
+                    <a class="nav-link" routerLink="register" routerLinkActive="bg-main">register</a>
+                </li>
+
+                <!-- <li class="nav-item" *ngIf="isLoggedIn">
+                    <a class="nav-link" routerLink="profile" routerLinkActive="">Profile</a>
+                </li> -->
+
+                <li class="nav-item" *ngIf="isLoggedIn">
+                    <a class="nav-link" routerLink="logOut" routerLinkActive="bg-main" (click)="logOutNav()">logOut</a>
+                </li>
+
+                <li class="nav-item mx-2" *ngIf="isLoggedIn">
+                    <a class="nav-link" routerLink="wishList">
+                        <i class="fa-solid fa-heart text-danger fs-3"></i>
+                    </a>
+                </li>
+
+
+                <li class="nav-item" *ngIf="isLoggedIn">
+                    <a class="nav-link position-relative" routerLink="cart">
+                        <i class="fa-solid fa-cart-shopping fs-3"></i>
+                        <div class="border border-main bg-main text-white myQuantityCart">{{numberOfCartItems}}</div>
+                    </a>
+                </li>
+
+                <li class="nav-item mx-4">
+                    <a class="nav-link" routerLink="allorders" routerLinkActive="bg-main">My Orders</a>
+                </li>
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
