@@ -1,48 +1,51 @@
-<section class="container py-5">
-    <h1 class="text-main text-center fw-bold">
-        ALL BRANDS
-    </h1>
-    <div class="row py-5 g-4" *ngIf="myBrands">
-        <div class="col-md-4" *ngFor="let brands of myBrands">
-            <div class="border border-main product d-flex flex-column justify-content-center align-items-center cursor-pointer"
-                (click)="getSpecificBrandFromBrands(brands._id)">
-                <div>
-                    <img [src]="brands.image" [alt]="brands.name">
+<div class="container py-5">
 
-                </div>
-                <div>
-                    <p class="text-center fw-bold">{{brands.name}}</p>
+    <section class="container py-5">
+        <h1 class="text-main text-center fw-bold">
+            ALL BRANDS
+        </h1>
+        <div class="row py-5 g-4" *ngIf="myBrands">
+            <div class="col-md-4" *ngFor="let brands of myBrands">
+                <div class="border border-main product d-flex flex-column justify-content-center align-items-center cursor-pointer"
+                    (click)="getSpecificBrandFromBrands(brands._id)">
+                    <div>
+                        <img [src]="brands.image" [alt]="brands.name">
 
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <i class="fa-solid fa-x cursor-pointer" (click)="closeModal()"></i>
-            </div>
-            <div class="modal-body">
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="col-md-6 text-start">
-                        <p class="h1 fw-bold text-main">{{specificBrand.name}}</p>
-                        <p class="fw-bold">{{specificBrand.slug}}</p>
                     </div>
-                    <div class="col-md-6 text-center">
-                        <img [src]="specificBrand.image" alt="" class="img-fluid">
+                    <div>
+                        <p class="text-center fw-bold">{{brands.name}}</p>
+
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                    (click)="closeModal()">Close</button>
+        </div>
+    </section>
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    <i class="fa-solid fa-x cursor-pointer" (click)="closeModal()"></i>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="col-md-6 text-start">
+                            <p class="h1 fw-bold text-main">{{specificBrand.name}}</p>
+                            <p class="fw-bold">{{specificBrand.slug}}</p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img [src]="specificBrand.image" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        (click)="closeModal()">Close</button>
+                </div>
             </div>
         </div>
-    </div>
+    </div>  
 </div>
