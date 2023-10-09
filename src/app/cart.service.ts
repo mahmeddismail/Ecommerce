@@ -28,7 +28,7 @@ export class CartService implements OnInit {
   }
 
 
-  headers: {} = {
+  headers: any = {
     token: localStorage.getItem('userToken')
   }
 
