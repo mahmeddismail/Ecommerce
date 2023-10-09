@@ -25,26 +25,30 @@
 
         </div>
 
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between align-items-center col-md-12">
 
 
-            <div class="d-flex my-3">
+            <div class="d-flex my-3 col-md-4">
                 <a [routerLink]="['/forgetPassword']">
                     <span class=" text-main" type="submit">Forgot Your Password? </span>
                 </a>
             </div>
 
-            <div class="d-flex my-3">
-                <span>Don't have an account?&ensp;</span>
-                <a [routerLink]="['/register']">
-                    <span class=" text-main" type="submit">Register Now </span>
-                </a>
+            <div class="my-3 col-md-4">
+                <span>Don't have an account?
+                    <a [routerLink]="['/register']">
+                        <span class=" text-main" type="submit">Register Now </span>
+                    </a>
+                </span>
+
             </div>
 
-            <button class="btn bg-main text-white my-3" [disabled]="LoginForm.invalid" type="submit">
-                <span *ngIf="!isLoading">Login</span>
-                <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin text-center"></i>
-            </button>
+            <div class="col-md-4 my-3  d-flex justify-content-end">
+                <button class="btn bg-main text-white" [disabled]="LoginForm.invalid" type="submit">
+                    <span *ngIf="!isLoading">Login</span>
+                    <i *ngIf="isLoading" class="fa-solid fa-spinner fa-spin text-center"></i>
+                </button>
+            </div>
 
         </div>
 

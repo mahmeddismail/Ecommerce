@@ -5,7 +5,7 @@
         <input type="text" class="form-control mb-2" id="text" placeholder="Search by the name of the product"
             [(ngModel)]="searchTerm">
     </div>
-    
+
 </div>
 <div class="container">
     <div class="row gy-3" *ngIf="allProducts">
@@ -20,17 +20,23 @@
                         <!-- <span *ngIf="myCategories.includes($any(product.category._id))">dasads</span> -->
                         <!-- <span class="text-main font-sm">{{product.category._id}}</span> -->
                         <h3 class="h6 fw-bold">{{product.title|seeMore:2}}</h3>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span>{{product.price}}EGP</span>
-                            <div>
+                        <div class="d-flex justify-content-between align-items-center col-md-12">
+                            <div class="col-md-2">
 
-                                <i *ngFor="let num of [1,2,3,4,5]" [class.rating-color]="product.ratingsAverage>=num"
-                                    class="fa-solid fa-star"></i>
-                                <span class="text-muted">
-                                    <small>
-                                        {{product.ratingsAverage}}
-                                    </small>
-                                </span>
+                                <span>{{product.price}}EGP</span>
+                            </div>
+
+                            <div>
+                                <div class="col-md-10 d-flex justify-content-between align-items-center">
+                                    <i *ngFor="let num of [1,2,3,4,5]"
+                                        [class.rating-color]="product.ratingsAverage>=num" class="fa-solid fa-star"></i>
+                                    <span class="text-muted">
+                                        <small>
+                                            {{product.ratingsAverage}}
+                                        </small>
+                                    </span>
+                                </div>
+
                             </div>
                         </div>
 
