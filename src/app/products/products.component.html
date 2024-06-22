@@ -31,7 +31,7 @@
 
                         <button class="btn text-white w-100 bg-main d-grid" (click)="addToCart(product.id)">+
                             ADD</button>
-                        <div>
+                        <div class="mx-2">
                             <div (click)="addToWishList(product.id)">
 
                                 <div *ngIf="!myLatestWishListIds.includes($any(product.id))">
